@@ -1,5 +1,5 @@
 {
-  description = "Learning project flake";
+  description = "Phlake - The Phoenix from the flake ashes";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
