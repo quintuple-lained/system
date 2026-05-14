@@ -45,10 +45,10 @@
 
       machines = [
         "dshkm"
-        "p90"
-        "aks74u"
-        "mp5"
-        "m249"
+        #  "p90"
+        #  "aks74u"
+        #  "mp5"
+        #  "m249"
       ];
 
       pkgs = import nixpkgs {
@@ -74,7 +74,7 @@
           };
 
           modules = [
-            ./modules/nix/system/generic.nix 
+            ./modules/system/generic.nix 
             ./hosts/${machine}/conf.nix 
             ./hosts/${machine}/hw-conf.nix
           ];

@@ -37,7 +37,6 @@
     extraOptions = "experimental-fetures = nix-command flakes ";
   };
   programs.fish.enable = true;
-  programs.nix-index-database.comma.enable = true;
   
   security.rtkit.enable = true;
 
