@@ -45,6 +45,7 @@
         "p90"
         "aks74u"
         "mp5"
+        "m249"
       ];
 
       pkgs = import nixpkgs {
@@ -60,5 +61,21 @@
       ];
     in
     with nixpkgs.lib;
-    { };
+    {
+      nixosConfigurations = genAttrs machines (
+        machine:
+        nixosSystem {
+          inherit pkgs system;
+          specialArgs = {
+            inherit inputs;
+          };
+
+          modules = [
+            ./modules/nix/system/generic.nix 
+            ./hosts/${machine}/conf.nix 
+            ./hosts/${machine}/hw-conf.nix
+          ];
+        }
+      );
+    };
 }
