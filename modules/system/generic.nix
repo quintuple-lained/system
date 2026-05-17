@@ -1,8 +1,8 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
   boot = {
     loader.timeout = 5;
-    initrd.compressor = "zstf";
+    initrd.compressor = "zstd";
     consoleLogLevel = 0;
     kernelParams = [
       "systemd.show_status=auto"
@@ -16,7 +16,7 @@
 
   nix = {
     settings = {
-      # what are these? they were added 
+      # what are these? they were added
       use-sandbox = true;
       show-trace = true;
 
@@ -25,20 +25,33 @@
       max-jobs = "auto";
       cores = 0;
       auto-optimise-store = true;
-      
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = ''
-        --delete-older-than 62d
-      '';
+
+      gc = {
+        automatic = true;
+        dates = "weekly";
+        options = ''
+          --delete-older-than 62d
+        '';
       };
     };
     extraOptions = "experimental-fetures = nix-command flakes ";
   };
   programs.fish.enable = true;
-  
+
   security.rtkit.enable = true;
 
+  users.users.zoe = {
+    shell = pkgs.fish;
+    isNormalUser = true;
+    autoSubUidGidRange = true;
+    home = "/home/zoe";
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+      "audio"
+    ];
+    initialPassword = "password";
+  };
 
 }
