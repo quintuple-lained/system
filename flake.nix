@@ -46,7 +46,7 @@
       machines = [
         "dshkm"
         #  "p90"
-        #  "aks74u"
+        "aks74u"
         #  "mp5"
         #  "m249"
       ];
