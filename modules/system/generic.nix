@@ -78,5 +78,13 @@
     ];
     initialPassword = "password";
   };
-
+  environment.systemPackages = with pkgs; [
+    binutils
+    coreutils
+    git
+    curl
+    wget
+    neovim
+    smartmontools
+  ];
 }
