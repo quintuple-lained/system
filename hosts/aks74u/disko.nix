@@ -17,32 +17,49 @@
 								mountOptions = [ "umask=0077" ];
 							};
 						};
-						encryptedSwap = {
-							size = "16G";
-							content = {
-								type = "swap";
-								randomEncryption = true;
-								priority = 100;
-							};
-						};
-						luks = {
-							size = "100%";
-							content = {
-								type = "luks";
-								name = "crypt_root";
-								settings.allowDiscards = true;
-								enrollFido2 = true;
-								enrollRecovery = talse;
-								content = {
-									type = "filesystem";
-									format = "xfs";
-									mountpoint = "/";
-								};
-							};
-						};
-					};
-				};
-			};
-		};
-	};
-};
+            luks = {
+              size = "100%";
+              content = {
+                type = "luks";
+                name = "crypt";
+                settings.allowDiscards = true;
+                enrollFido2 = true;
+                enrollRecovery = false;
+                content = {
+                  type = "lvm_pv";
+                  vg = "pool";
+                };
+              };
+            };
+          };
+        };
+        lvm_vg = {
+          pool = {
+            type = "lvm_vg";
+            lvs = {
+              swap = {
+                size = "32G";
+                content = {
+                  type = "swap";
+                  discardPolicy = "both";
+                  resumeDevice = true;
+                };
+              };
+              root = {
+                size = "100%";
+                content = {
+                  type = "filesystem";
+                  format = "xfs";
+                  mountpoint = "/";
+                  mountOptions = [
+                    "defaults"
+                  ];
+                };
+              };
+            };
+          };
+        };
+      };
+    };
+  };
+}

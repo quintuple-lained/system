@@ -2,6 +2,7 @@
 {
   imports = [
     ../art
+    ../emacs 
   ];
 
   programs.home-manager.enable = true;

@@ -12,7 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,6 +28,10 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -38,7 +41,6 @@
       home-manager,
       sops-nix,
       catppuccin,
-      emacs-overlay,
       nix-index-database,
       microvm,
       hardware,
@@ -56,16 +58,12 @@
       ];
 
       pkgs = import nixpkgs {
-        inherit system overlays;
+        inherit system;
 
         config = {
           allowUnfree = true;
         };
       };
-
-      overlays = [
-        emacs-overlay.overlay
-      ];
     in
     with nixpkgs.lib;
     {
@@ -78,8 +76,8 @@
           };
 
           modules = [
-            ./modules/system/generic.nix 
-            ./hosts/${machine}/conf.nix 
+            ./modules/system/generic.nix
+            ./hosts/${machine}/conf.nix
             ./hosts/${machine}/hw-conf.nix
           ];
         }

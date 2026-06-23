@@ -38,25 +38,6 @@
         "type": "github"
       }
     },
-    "emacs-overlay": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_2",
-        "nixpkgs-stable": "nixpkgs-stable"
-      },
-      "locked": {
-        "lastModified": 1778756604,
-        "narHash": "sha256-IOM4sv+0NnchlJ10leGUcmmrWz5Wx6ZXJpw22of/kxw=",
-        "owner": "nix-community",
-        "repo": "emacs-overlay",
-        "rev": "370a91d75e2945cda4e29525891a75c859f658b7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "emacs-overlay",
-        "type": "github"
-      }
-    },
     "hardware": {
       "locked": {
         "lastModified": 1778593042,
@@ -149,51 +130,39 @@
         "type": "github"
       }
     },
-    "nixpkgs-stable": {
-      "locked": {
-        "lastModified": 1778430510,
-        "narHash": "sha256-Ti+ZBvW6yrWWAg2szExVTwCd4qOJ3KlVr1tFHfyfi8Q=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "8fd9daa3db09ced9700431c5b7ad0e8ba199b575",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-25.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1778443072,
         "narHash": "sha256-zi7/fsqM/kFdNuED//4WOCUtezGtKKqRNORjMvfwjnA=",
-        "owner": "NixOS",
+        "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "da5ad661ba4e5ef59ba743f0d112cbc30e474f32",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
+        "owner": "nixos",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "noctalia": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1778443072,
-        "narHash": "sha256-zi7/fsqM/kFdNuED//4WOCUtezGtKKqRNORjMvfwjnA=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "da5ad661ba4e5ef59ba743f0d112cbc30e474f32",
+        "lastModified": 1782201665,
+        "narHash": "sha256-M2t5C3MZ1AoEQlc4wdj/p5rcjx6iABAER60X7wN/jJc=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
+        "rev": "77072bacf4d41d0adf9c19e080a0dc1e2266b31e",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
         "type": "github"
       }
     },
@@ -201,12 +170,12 @@
       "inputs": {
         "catppuccin": "catppuccin",
         "disko": "disko",
-        "emacs-overlay": "emacs-overlay",
         "hardware": "hardware",
         "home-manager": "home-manager",
         "microvm": "microvm",
         "nix-index-database": "nix-index-database",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_2",
+        "noctalia": "noctalia",
         "sops-nix": "sops-nix"
       }
     },

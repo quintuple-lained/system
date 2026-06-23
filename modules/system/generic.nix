@@ -2,7 +2,10 @@
 {
   boot = {
     loader.timeout = 5;
-    initrd.compressor = "zstd";
+    initrd = {
+      compressor = "zstd";
+      systemd.enable = true;
+    };
     consoleLogLevel = 0;
     kernelParams = [
       "systemd.show_status=auto"
@@ -32,7 +35,7 @@
     ];
   };
 
-  services.xserver.xkb.layout = "us";
+  
   console.keyMap = "us";
   
   time.timeZone = "Europe/Berlin";
@@ -41,6 +44,7 @@
 
   nix = {
     settings = {
+      experimental-features = ["nix-command" "flakes" ];
       # what are these? they were added
       use-sandbox = true;
       show-trace = true;
@@ -50,20 +54,15 @@
       max-jobs = "auto";
       cores = 0;
       auto-optimise-store = true;
-
-      gc = {
-        automatic = true;
-        dates = "weekly";
-        options = ''
-          --delete-older-than 62d
-        '';
-      };
     };
-    extraOptions = "experimental-fetures = nix-command flakes ";
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 62d";
+    };
   };
-  programs.fish.enable = true;
 
-  security.rtkit.enable = true;
+  programs.fish.enable = true;
 
   users.users.zoe = {
     shell = pkgs.fish;
