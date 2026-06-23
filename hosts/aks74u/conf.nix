@@ -1,6 +1,9 @@
-{ pkgs, ...}:
+{ pkgs, inputs, ...}:
 {
-  imports = [];
+  imports = [
+	inputs.disko.nixosModules.disko
+	./disko.nix
+	];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
