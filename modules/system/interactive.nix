@@ -4,7 +4,7 @@
   imports = [
     ./generic.nix
   ];
-  environment.systemPackage = [
+  environment.systemPackages = [
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 

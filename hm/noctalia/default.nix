@@ -1,8 +1,8 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 {
   home-manager.users.zoe = {
     imports = [
-      inputs.noctalia.homeModdules.default
+      inputs.noctalia.homeModules.default
     ];
 
     programs.noctalia = {
@@ -15,10 +15,10 @@
         };
         wallpaper = {
           enabled = true;
-          default.path = "/path/to/wallpapers/wallpaper.png";
-          
+          default.path = "${config.home.homeDirectory}/wallpapers/wallpaper.png";
         };
       };
     };
+    home.file."wallpapers/wallpaper.png".source = ../../assets/wallpaper.png;
   };
   }

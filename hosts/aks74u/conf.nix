@@ -3,6 +3,7 @@
   imports = [
 	inputs.disko.nixosModules.disko
 	./disko.nix
+  ../../hm/aks74u/home.nix
 	];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;

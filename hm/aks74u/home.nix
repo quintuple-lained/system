@@ -2,12 +2,15 @@
 {
   imports = [
     ../art
-    ../emacs 
+    ../emacs
+    ../desktop
   ];
 
   programs.home-manager.enable = true;
-  home.stateVersion = "25.05";
-
-  home.username = "zoe";
+  home = {
+    stateVersion = "25.05";
+    username = "zoe";
+    homeDirectory = "/home/zoe/";
+  };
 
 }

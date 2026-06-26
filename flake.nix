@@ -79,6 +79,7 @@
             ./modules/system/generic.nix
             ./hosts/${machine}/conf.nix
             ./hosts/${machine}/hw-conf.nix
+            home-manager.nixosModules.home-manager
           ];
         }
       );
