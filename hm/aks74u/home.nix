@@ -10,7 +10,6 @@
   home = {
     stateVersion = "25.05";
     username = "zoe";
-    homeDirectory = "/home/zoe/";
   };
 
 }

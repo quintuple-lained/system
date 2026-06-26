@@ -6,7 +6,11 @@
   ../../modules/system/interactive.nix
 	];
 
-  home-manager.users.zoe.imports = [../../hm/aks74u/home.nix];
+  home-manager.users.zoe.imports = [
+    ../../hm/aks74u/home.nix
+    inputs.noctalia.homeModules.default
+    inputs.flatpaks.homeManagerModules.nix-flatpak
+  ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.loader = {

@@ -1,10 +1,5 @@
-{ inputs, config, ... }:
+{  config, ... }:
 {
-  
-  imports = [
-    inputs.noctalia.homeModules.default
-  ];
-
   programs.noctalia = {
     enable = true;
     settings = {
