@@ -32,6 +32,7 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flatpaks.url = "github:gmodena/nix-flatpak";
   };
 
   outputs =

@@ -1,24 +1,23 @@
 { inputs, config, ... }:
 {
-  home-manager.users.zoe = {
-    imports = [
-      inputs.noctalia.homeModules.default
-    ];
+  
+  imports = [
+    inputs.noctalia.homeModules.default
+  ];
 
-    programs.noctalia = {
-      enable = true;
-      settings = {
-        theme = {
-          mode = "dark";
-          source = "builtin";
-          builtin = "catppuccin";
-        };
-        wallpaper = {
-          enabled = true;
-          default.path = "${config.home.homeDirectory}/wallpapers/wallpaper.png";
-        };
+  programs.noctalia = {
+    enable = true;
+    settings = {
+      theme = {
+        mode = "dark";
+        source = "builtin";
+        builtin = "catppuccin";
+      };
+      wallpaper = {
+        enabled = true;
+        default.path = "${config.home.homeDirectory}/wallpapers/wallpaper.png";
       };
     };
-    home.file."wallpapers/wallpaper.png".source = ../../assets/wallpaper.png;
   };
-  }
+  home.file."wallpapers/wallpaper.png".source = ../../assets/wallpaper.png;
+}
