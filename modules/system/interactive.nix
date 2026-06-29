@@ -12,6 +12,12 @@
 
   networking.networkmanager.enable = true;
 
+  services.displayManager.ly.enable = true;
+
+  hardware.bluetooth.enable = true;
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+
   services.fwupd.enable = true;
   services.flatpak.enable = true;
 
