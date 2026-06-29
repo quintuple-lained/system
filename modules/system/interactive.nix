@@ -24,6 +24,11 @@
   programs.niri.enable = true;
   programs.xwayland.enable = true;
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   environment.sessionVariables.QT_QPA_PLATFORM = "wayland;xcb";
 
   security.rtkit.enable = true;
@@ -46,4 +51,26 @@
     publish.enable = true;
   };
 
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/zoe/system";
+  };
+
+  catppuccin = {
+    enable = true;
+    flavour = "mocha";
+    accent = "pink";
+  };
+
+  enviroment.systemPackages = with pkgs; [
+    binutils
+    coreutils
+    git
+    curl
+    wget
+    neovim
+    smartmontools
+  ];
 }
