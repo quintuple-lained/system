@@ -81,6 +81,7 @@
             ./hosts/${machine}/conf.nix
             ./hosts/${machine}/hw-conf.nix
             home-manager.nixosModules.home-manager
+            catppuccin.nixosModules.catppuccin
           ];
         }
       );

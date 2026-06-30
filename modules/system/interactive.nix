@@ -41,7 +41,6 @@
 
   security.polkit.enable = true;
 
-  # Run unpatched binaries (downloaded executables, some dev tools)
   programs.nix-ld.enable = true;
 
   services.avahi = {
@@ -60,17 +59,10 @@
 
   catppuccin = {
     enable = true;
-    flavour = "mocha";
+    autoEnable = true;
+    flavor = "mocha";
     accent = "pink";
   };
 
-  enviroment.systemPackages = with pkgs; [
-    binutils
-    coreutils
-    git
-    curl
-    wget
-    neovim
-    smartmontools
-  ];
+
 }

@@ -4,6 +4,7 @@
     ../art
     ../emacs
     ../desktop
+    ../fish
   ];
 
   programs.home-manager.enable = true;

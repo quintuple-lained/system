@@ -46,19 +46,11 @@
     settings = {
       experimental-features = ["nix-command" "flakes" ];
       # what are these? they were added
-      use-sandbox = true;
       show-trace = true;
-
-      sandbox-paths = [ "/bin/sh=${pkgs.busybox-sandbox-shell.out}/bin/busybox" ];
 
       max-jobs = "auto";
       cores = 0;
       auto-optimise-store = true;
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 62d";
     };
   };
 
@@ -85,5 +77,7 @@
     wget
     neovim
     smartmontools
+    ripgrep
+    fd
   ];
 }
