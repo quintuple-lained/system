@@ -10,6 +10,7 @@
     ../../hm/aks74u/home.nix
     inputs.noctalia.homeModules.default
     inputs.flatpaks.homeManagerModules.nix-flatpak
+    inputs.catppuccin.homeManagerModules.catppuccin
   ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 

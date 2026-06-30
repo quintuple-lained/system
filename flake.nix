@@ -78,6 +78,7 @@
 
           modules = [
             ./modules/system/generic.nix
+            ./modules/system/hm.nix
             ./hosts/${machine}/conf.nix
             ./hosts/${machine}/hw-conf.nix
             home-manager.nixosModules.home-manager
