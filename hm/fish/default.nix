@@ -9,8 +9,14 @@
 
   programs.fish = {
     plugins = [
-      { name = "autopair"; src = pkgs.fishPlugins.autopair; }
-      { name = "pure"; src = pkgs.fishPlugins.pure; }
+      {
+        name = "autopair";
+        src = pkgs.fishPlugins.autopair;
+      }
+      {
+        name = "pure";
+        src = pkgs.fishPlugins.pure;
+      }
     ];
 
     shellAbbrs = {

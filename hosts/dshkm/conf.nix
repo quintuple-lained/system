@@ -1,6 +1,6 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
-  imports = [];
+  imports = [ ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 

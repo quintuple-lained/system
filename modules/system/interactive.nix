@@ -10,11 +10,18 @@
 
   services.xserver.xkb.layout = "us";
 
-  networking.networkmanager.enable = true;
-
+  networking = {
+    networkmanager.enable = true;
+  };
   services.displayManager.ly.enable = true;
-
-  hardware.bluetooth.enable = true;
+  
+  hardware = {
+    bluetooth.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+  };
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
@@ -63,6 +70,5 @@
     flavor = "mocha";
     accent = "pink";
   };
-
 
 }

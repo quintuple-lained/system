@@ -33,6 +33,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flatpaks.url = "github:gmodena/nix-flatpak";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -83,6 +87,7 @@
             ./hosts/${machine}/hw-conf.nix
             home-manager.nixosModules.home-manager
             catppuccin.nixosModules.catppuccin
+            inputs.nixvim.nixosModules.nixvim
           ];
         }
       );

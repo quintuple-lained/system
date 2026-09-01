@@ -18,5 +18,6 @@
     whois
     caligula
     wakeonlan
+    firefox
   ];
 }

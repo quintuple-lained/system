@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
   home = {
     packages = with pkgs; [
@@ -7,6 +7,7 @@
       ruff
       nixd
       clojure-lsp
+      nerd-fonts.anonymice
     ];
     file.".emacs.d" = {
       source = ./config;

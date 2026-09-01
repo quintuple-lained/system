@@ -1,10 +1,11 @@
-{ pkgs, inputs, ...}:
+{ pkgs, inputs, ... }:
 {
   imports = [
-	inputs.disko.nixosModules.disko
-	./disko.nix
-  ../../modules/system/interactive.nix
-	];
+    inputs.disko.nixosModules.disko
+    ./disko.nix
+    ../../modules/system/interactive.nix
+    ../../modules/nixvim
+  ];
 
   home-manager.users.zoe.imports = [
     ../../hm/aks74u/home.nix

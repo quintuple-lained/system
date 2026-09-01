@@ -35,16 +35,18 @@
     ];
   };
 
-  
   console.keyMap = "us";
-  
+
   time.timeZone = "Europe/Berlin";
 
   services.resolved.enable = true;
 
   nix = {
     settings = {
-      experimental-features = ["nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       # what are these? they were added
       show-trace = true;
 

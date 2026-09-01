@@ -1,14 +1,14 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   services.mpd = {
     enable = true;
     musicDirectory = "~/Music";
     extraConfig = ''
-                audio_output {
-                             type "pipewire"
-                             name "Pipewire"
-                }
-                '';
+      audio_output {
+                   type "pipewire"
+                   name "Pipewire"
+      }
+    '';
   };
   home.packages = with pkgs; [
     mpc
