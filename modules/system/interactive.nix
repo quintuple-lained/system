@@ -57,6 +57,11 @@
     publish.enable = true;
   };
 
+  programs.localsend = {
+    enable = true;
+    openFirewall = true;
+  };
+
   programs.nh = {
     enable = true;
     clean.enable = true;

@@ -2,6 +2,7 @@
 {
   imports = [
     ../noctalia
+    ../fish
   ];
 
   home.packages = with pkgs; [
