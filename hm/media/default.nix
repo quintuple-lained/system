@@ -15,5 +15,6 @@
     ashuffle
     nicotine-plus
     mpv
+    picard
   ];
 }
