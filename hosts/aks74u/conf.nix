@@ -7,6 +7,8 @@
     ../../modules/nixvim
   ];
 
+  networking.hostName = "aks74u";
+
   home-manager.users.zoe.imports = [
     ../../hm/aks74u/home.nix
     inputs.noctalia.homeModules.default

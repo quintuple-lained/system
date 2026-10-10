@@ -58,6 +58,12 @@
 
   programs.fish.enable = true;
 
+  environment.shellAliases = {
+    ls = null;
+    ll = null;
+    l = null;
+  };
+
   users.users.zoe = {
     shell = pkgs.fish;
     isNormalUser = true;

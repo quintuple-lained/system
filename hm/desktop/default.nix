@@ -1,8 +1,9 @@
 { pkgs, ... }:
 {
   imports = [
-    ../noctalia
     ../fish
+    ../ssh
+    ../media
   ];
 
   home.packages = with pkgs; [

@@ -11,5 +11,6 @@
     protontricks
     wineWow64Packages.full
     pcsx2
+    scanmem
   ];
 }

@@ -4,7 +4,7 @@
     ../common
     ../art
     ../emacs
-    ../desktop
+    ../desktop/aks74u.nix
     ../gaming
     ../dev
   ];
