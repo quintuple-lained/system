@@ -3,9 +3,17 @@
   imports = [ 
     ../../modules/system/interactive.nix
     ../../modules/nixvim
+    ../../modules/vr
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPatches = [
+  {
+  }
+];
+
+  };
 
   home-manager.users.zoe.imports = [
     ../../hm/dshkm/home.nix
