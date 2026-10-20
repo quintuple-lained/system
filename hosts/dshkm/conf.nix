@@ -8,11 +8,6 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelPatches = [
-  {
-  }
-];
-
   };
 
   home-manager.users.zoe.imports = [
@@ -71,6 +66,9 @@
       lfs.enable = true;
     };
     gamemode.enable = true;
+    steam = {
+      remotePlay.openFirewall = true;
+    };
   };
 
   system.stateVersion = "25.11";
