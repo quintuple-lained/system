@@ -20,5 +20,6 @@
     nix-index
     comma
     wireguard-tools
+    obsidian
   ];
 }
