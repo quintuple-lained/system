@@ -4,6 +4,7 @@
     krita
     inkscape
     gimp
+    blender
   ];
 
   services.flatpak.packages = [
